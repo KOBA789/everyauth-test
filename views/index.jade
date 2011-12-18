@@ -1,0 +1,14 @@
+- if (!everyauth.loggedIn)
+  h2 未ログイン
+  #twitter-login
+    a(href='/auth', style='border: 0px')
+      img(style='border: 0px', src='https://si0.twimg.com/images/dev/buttons/sign-in-with-twitter-l.png')
+- else
+  h2 ログイン済
+  - if (everyauth.twitter)
+    h3 Twitter ユーザデータ
+    p= JSON.stringify(everyauth.twitter.user)
+    p= JSON.stringify(everyauth.twitter)
+    p= JSON.stringify(everyauth)
+  h3
+    a(href='/logout') Logout
